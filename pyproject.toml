@@ -1,6 +1,6 @@
 [project]
 name = "nonebot-plugin-animeapi"
-version = "1.0.0"
+version = "1.0.1"
 description = "NoneBot2 anime image generation plugin for AnimeAPI: $0.003 per image, no subscription. 使用 AnimeAPI 生成动漫图片，每张 $0.003"
 readme = "README.md"
 requires-python = ">=3.9"

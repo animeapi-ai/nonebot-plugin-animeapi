@@ -33,7 +33,6 @@ async def generate(
     model: str,
     orientation: str,
     enhance: bool,
-    allow_nsfw: bool,
     timeout: float = 120,
 ) -> Generated:
     """Generate one image. Retries once when AnimeAPI says a retry can succeed."""
@@ -42,7 +41,6 @@ async def generate(
         "model": model,
         "orientation": orientation,
         "enhance": enhance,
-        "allowNSFW": allow_nsfw,
     }
     async with httpx.AsyncClient(timeout=timeout) as client:
         for attempt in (1, 2):
@@ -64,9 +62,6 @@ async def generate(
             error = data.get("error")
             message = error if isinstance(error, str) else (error or {}).get("message") or f"HTTP {res.status_code}"
             code = data.get("code") or ""
-            nsfw_blocked = not allow_nsfw and "nsfw" in message.lower()
-            if nsfw_blocked:
-                raise AnimeAPIError(message, res.status_code, "NSFW_BLOCKED")
             retryable = data.get("retryable") is True or res.status_code in (500, 503)
             if retryable and attempt == 1:
                 try:

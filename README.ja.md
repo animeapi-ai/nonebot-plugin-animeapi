@@ -26,13 +26,14 @@ ANIMEAPI_LANGUAGE=ja
 | `ANIMEAPI_KEY` | 空 | AnimeAPI のキー（必須） |
 | `ANIMEAPI_MODEL` | `anime` | 1 枚 `anime` $0.003、`ultra` $0.01、`ultra-max` $0.02 |
 | `ANIMEAPI_ORIENTATION` | `portrait` | `portrait`（縦）、`square`（正方形）、`landscape`（横）。価格は同じ |
-| `ANIMEAPI_ALLOW_NSFW` | **`false`** | NSFW 出力は既定でオフです。該当画像は拒否・返金され、チャットには送信されません |
 | `ANIMEAPI_ENHANCE` | `true` | プロンプトをタグに自動変換（anime モデル） |
 | `ANIMEAPI_COOLDOWN` | `30` | ユーザーごとの生成間隔（秒）。`0` で無効 |
 | `ANIMEAPI_ALLOW_MODEL_OVERRIDE` | `false` | ユーザーが `-m` でモデルを選べるようにします |
 | `ANIMEAPI_SHOW_PROMPT` | `false` | モデルが受け取ったタグも送信 |
 | `ANIMEAPI_LANGUAGE` | `zh` | ボットの返信言語：`zh`、`en`、`ja` |
 | `ANIMEAPI_TIMEOUT` | `120` | AnimeAPI の応答を待つ秒数 |
+
+AnimeAPI は成人向けコンテンツを生成しません。露骨なプロンプトは拒否され、課金されません。
 
 ## 使い方
 

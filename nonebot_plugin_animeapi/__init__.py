@@ -93,7 +93,6 @@ async def handle_anime(matcher: Matcher, event: Event, args: Message = CommandAr
             model=model,
             orientation=orientation,
             enhance=config.animeapi_enhance,
-            allow_nsfw=config.animeapi_allow_nsfw,
             timeout=config.animeapi_timeout,
         )
     except AnimeAPIError as exc:
@@ -102,8 +101,6 @@ async def handle_anime(matcher: Matcher, event: Event, args: Message = CommandAr
             reply = text(lang, "no_balance")
         elif exc.status == 401:
             reply = text(lang, "invalid_key")
-        elif exc.code == "NSFW_BLOCKED":
-            reply = text(lang, "blocked_nsfw")
         elif exc.code in ("MODERATION_BLOCKED", "PROVIDER_REJECTED"):
             reply = text(lang, "rejected", reason=exc.message)
         elif exc.status in (429, 503):

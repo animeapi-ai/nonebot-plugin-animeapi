@@ -10,8 +10,6 @@ class Config(BaseModel):
     """Default model. anime $0.003, ultra $0.01, ultra-max $0.02 per image."""
     animeapi_orientation: Literal["portrait", "square", "landscape"] = "portrait"
     """Default image shape. Same price for every shape."""
-    animeapi_allow_nsfw: bool = False
-    """Allow NSFW output. Off by default: flagged images are refused and refunded."""
     animeapi_enhance: bool = True
     """Let AnimeAPI rewrite plain-language prompts into tags (anime model)."""
     animeapi_cooldown: int = 30

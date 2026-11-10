@@ -31,13 +31,14 @@ ANIMEAPI_KEY=ank_xxxxxxxx
 | `ANIMEAPI_KEY` | empty | Your AnimeAPI key (required) |
 | `ANIMEAPI_MODEL` | `anime` | `anime` $0.003, `ultra` $0.01, `ultra-max` $0.02 per image |
 | `ANIMEAPI_ORIENTATION` | `portrait` | `portrait`, `square` or `landscape`; same price |
-| `ANIMEAPI_ALLOW_NSFW` | **`false`** | NSFW output is off by default. Flagged images are refused and refunded instead of being sent to the chat |
 | `ANIMEAPI_ENHANCE` | `true` | Rewrite plain prompts into tags (anime model) |
 | `ANIMEAPI_COOLDOWN` | `30` | Seconds each user must wait between images; `0` disables the limit |
 | `ANIMEAPI_ALLOW_MODEL_OVERRIDE` | `false` | Let users choose a model with `-m`. Off so users cannot pick a more expensive model |
 | `ANIMEAPI_SHOW_PROMPT` | `false` | Also send the tags the model received |
 | `ANIMEAPI_LANGUAGE` | `zh` | Language of the bot's replies: `zh`, `en` or `ja` |
 | `ANIMEAPI_TIMEOUT` | `120` | Seconds to wait for AnimeAPI |
+
+AnimeAPI does not generate adult content. Explicit prompts are refused and not charged.
 
 ## Use
 
